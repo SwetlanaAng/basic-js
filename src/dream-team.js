@@ -15,14 +15,12 @@ const { NotImplementedError } = require('../lib');
  */
 function createDreamTeam(members) {
    let ans = '';
-   if (Array.isArray(members)){
-    for( let i = 0; i  < members.length; i++) {
+  if (Array.isArray(members)) {
+    for (let i = 0; i < members.length; i++) {
       if (members[i] && typeof members[i] === 'string') ans += (members[i].trim())[0].toUpperCase();
     }
-    ans = (ans.split('').sort()).join('');
-   }
-   
-   return ans;
+    return (ans.split('').sort()).join('');
+  } else return false;
 }
 
 module.exports = {
